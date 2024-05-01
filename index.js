@@ -11,8 +11,8 @@ function randomColor() {
   return rgbColor;
 }
 
-// Contoh penggunaan: mengubah warna teks menjadi warna acak saat tombol ditekan
+// Mengubah warna teks "Selamat Datang Di Website Renz" menjadi warna acak saat tombol ditekan
 document.getElementById('changeColorButton').addEventListener('click', function() {
-  var textElement = document.getElementById('textElement');
-  textElement.style.color = randomColor();
+  var welcomeText = document.getElementById('welcomeText');
+  welcomeText.style.color = randomColor();
 });
