@@ -15,6 +15,31 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      overflow: hidden; /* Prevent overflow of animated elements */
+    }
+
+    .animation-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .text-animation {
+      display: inline-block;
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      opacity: 0;
+      animation: slideIn 0.5s ease forwards;
+    }
+
+    .logo-animation {
+      width: 200px;
+      height: auto;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
 
     .btn {
@@ -26,65 +51,68 @@
       border-radius: 6px;
       border: .3px solid var(--color);
       transition: .5s;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      z-index: 1;
       font-weight: 300;
       font-size: 17px;
       font-family: 'Roboto', 'Segoe UI', sans-serif;
       text-transform: uppercase;
       color: var(--color);
       margin-bottom: 10px; /* Add margin to separate buttons */
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
 
-    .btn::after, .btn::before {
-      content: '';
-      display: block;
-      height: 100%;
-      width: 100%;
-      transform: skew(90deg) translate(-50%, -50%);
-      position: absolute;
-      inset: 50%;
-      left: 25%;
-      z-index: -1;
-      transition: .5s ease-out;
-      background-color: var(--color);
+    @keyframes slideIn {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
 
-    .btn::before {
-      top: -50%;
-      left: -25%;
-      transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
-    }
-
-    .btn:hover::before {
-      transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
-    }
-
-    .btn:hover::after {
-      transform: skew(45deg) translate(-50%, -50%);
-    }
-
-    .btn:hover {
-      color: var(--color2);
-    }
-
-    .btn:active {
-      filter: brightness(.7);
-      transform: scale(.98);
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <button onclick="window.open(`/pair`)" class="btn">pair code</button>
-  <button onclick="window.open(`https://github.com/RenzGH28`)" class="btn">github</button>
-  <button onclick="window.open(`https://youtube.com/@Renzz4You`)" class="btn">youtube</button>
-  <button onclick="window.open(`https://t.me/onlyrenzz`)" class="btn">telegram</button>
-  <button onclick="window.open(`https://www.instagram.com/renz4you_jb`)" class="btn">instagram</button>
-  <button onclick="window.open(`https://wa.me/62895329350352`)" class="btn">whatsapp</button>
-  <button onclick="window.open(`https://wa.me/6283845201171`)" class="btn">firenzbotz</button>
+  <div class="animation-container">
+    <!-- Animasi kata-kata "Selamat Datang Di Website Renz" -->
+    <div class="text-animation">S</div>
+    <div class="text-animation">e</div>
+    <div class="text-animation">l</div>
+    <div class="text-animation">a</div>
+    <div class="text-animation">m</div>
+    <div class="text-animation">a</div>
+    <div class="text-animation">t</div>
+    <div class="text-animation">&nbsp;</div>
+    <div class="text-animation">D</div>
+    <div class="text-animation">a</div>
+    <div class="text-animation">t</div>
+    <div class="text-animation">a</div>
+    <div class="text-animation">n</div>
+    <div class="text-animation">g</div>
+    <div class="text-animation">&nbsp;</div>
+    <div class="text-animation">D</div>
+    <div class="text-animation">i</div>
+    <div class="text-animation">&nbsp;</div>
+    <div class="text-animation">W</div>
+    <div class="text-animation">e</div>
+    <div class="text-animation">b</div>
+    <div class="text-animation">s</div>
+    <div class="text-animation">i</div>
+    <div class="text-animation">t</div>
+    <div class="text-animation">e</div>
+    <div class="text-animation">&nbsp;</div>
+    <div class="text-animation">R</div>
+    <div class="text-animation">e</div>
+    <div class="text-animation">n</div>
+    <div class="text-animation">z</div>
+    
+    <!-- Tombol -->
+    <button class="btn" onclick="window.open('/pair')">pair code</button>
+  </div>
+
+  <!-- Animasi logo dari link Telegraph -->
+  <img src="https://telegra.ph/file/992802619faacd9d1ddea.jpg" alt="Logo" class="logo-animation">
 
 </body>
 </html>
